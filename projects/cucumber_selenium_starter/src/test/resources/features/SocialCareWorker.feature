@@ -1,4 +1,4 @@
-Feature: Feature: Users that are social care workers
+Feature: Users that are social care workers
 
   As a user is a social care worker I want to be able to provide my details and let HMRC know that I believe that I have been underpaid.
 
