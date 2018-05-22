@@ -21,15 +21,21 @@ class StepDefinitions extends ScalaDsl with EN with Matchers with Browser {
     click on id("submit")
   }
 
+  When("""^I click on the 'An agent or representative of a company that employs social care workers' radio button$""") { () =>
+    click on id("capacityRegistering.companyAgent")
+    click on id("submit")
+  }
+
+  When("""^I click on the 'Someone who pays for care directly' radio button$""") { () =>
+    click on id("capacityRegistering.personalBudgetHolderDirect")
+    click on id("submit")
+  }
+
   Then("""^I should be on the "Social Care Worker" page with a link to advice on the National Living Wage$""") { () =>
     pageTitle shouldBe "Social care workers"
 
   }
 
-  When("""^I click on the 'An agent or representative of a company that employs social care workers' radio button$""") { () =>
-    click on id("capacityRegistering.companyAgent")
-    click on id("submit")
-  }
 
   Then("""^I enter the name of the company as "(.+)" and submit$""") { name: String =>
     textField("value").value = name
